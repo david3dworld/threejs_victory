@@ -60,7 +60,7 @@ class App{
                 new THREE.WireframeGeometry(geometry), lineMaterial);
             
             const group = new THREE.Group()
-            // group.add(cube);
+            group.add(cube);
             group.add(line);
 
             this._scene.add(group);

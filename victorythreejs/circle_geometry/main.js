@@ -196,11 +196,31 @@ Plane shape Plan geometry parameter(width?: number, height?: number, widthSegmen
             this._cube = group;            
         }
 /*************************************************************************************************** 
-Torus shape Torus geometry parameter(width?: number, height?: number, widthSegments?: number, heightSegments?: number): THREE.PlaneBufferGeometry) 
+Torus shape Torus geometry parameter(radius?: number, tube?: number, radialSegments?: number, tubularSegments?: number, arc?: number) 
+***************************************************************************************************/
+
+        // _setupModel() {
+        //     const geometry = new THREE.TorusGeometry(1, 0.2, 32,128, Math.PI);
+        //     const fillMaterial = new THREE.MeshPhongMaterial({color: 0x512251});            
+        //     const cube = new THREE.Mesh(geometry, fillMaterial);
+
+        //     const lineMaterial = new THREE.LineBasicMaterial({color: 0xff2200});
+        //     const line = new THREE.LineSegments(
+        //         new THREE.WireframeGeometry(geometry), lineMaterial);
+            
+        //     const group = new THREE.Group()
+        //     group.add(cube);
+        //     group.add(line);
+
+        //     this._scene.add(group);
+        //     this._cube = group;            
+        // }
+/*************************************************************************************************** 
+Torus shape Torus geometry parameter(radius?: number, tube?: number, tubularSegments?: number, radialSegments?: number, p?: number, q?: number) 
 ***************************************************************************************************/
 
         _setupModel() {
-            const geometry = new THREE.TorusGeometry();
+            const geometry = new THREE.TorusKnotGeometry(0.8, 0.2 , 64 ,32, 3, 4);
             const fillMaterial = new THREE.MeshPhongMaterial({color: 0x512251});            
             const cube = new THREE.Mesh(geometry, fillMaterial);
 
